@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #2D2D2D; /* charcoal */
+    --color-border: #E5E5E5; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #1E3A8A; /* deep teal - replacing aqua */
+    
+    /* Card & Surface Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #2D2D2D; /* charcoal */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #2D2D2D; /* charcoal */
+    --color-muted: #FAFAFA; /* gray-50 */
+    --color-muted-foreground: #666666; /* gray-500 */
+    
+    /* Brand Colors */
+    --color-primary: #800000; /* maroon */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #F5F5DC; /* beige */
+    --color-secondary-foreground: #2D2D2D; /* charcoal */
+    
+    /* Interactive Colors - Enhanced for better engagement */
+    --color-accent: #1E3A8A; /* deep teal - replacing aqua */
+    --color-accent-foreground: #FFFFFF; /* white for better contrast */
+    
+    /* Enhanced Status Colors */
+    --color-destructive: #DC2626; /* red-600 - more vibrant */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-success: #059669; /* emerald-600 - more engaging */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* amber-600 - warmer */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Typography Scale */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing Scale */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-2xl: 3rem; /* 48px */
+    --spacing-3xl: 4rem; /* 64px */
+    --spacing-4xl: 5rem; /* 80px */
+    
+    /* Enhanced Shadow System for more depth */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 25px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem; /* 4px */
+    --radius-md: 0.5rem; /* 8px */
+    --radius-lg: 0.75rem; /* 12px */
+    --radius-xl: 1rem; /* 16px */
+    
+    /* Enhanced Animation Timing */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Enhanced focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2;
+  }
+  
+  /* Enhanced selection styles */
+::selection  {
+    @apply bg-accent text-accent-foreground;
+  }
+}
+
+@layer components {
+  /* Enhanced Typography Components */
+  .text-display {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-headline {
+    @apply font-heading text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight;
+  }
+  
+  .text-title {
+    @apply font-heading text-xl md:text-2xl font-semibold leading-snug;
+  }
+  
+  .text-subtitle {
+    @apply font-body text-lg font-medium leading-relaxed;
+  }
+  
+  .text-body {
+    @apply font-body text-base leading-relaxed;
+  }
+  
+  .text-caption {
+    @apply font-body text-sm text-muted-foreground leading-normal;
+  }
+  
+  /* Enhanced Layout Components */
+  .container-fluid {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-narrow {
+    @apply w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  /* Enhanced Interactive Components */
+.btn-primary  {
+    @apply bg-primary text-primary-foreground;
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+    @apply shadow-md hover:shadow-lg focus:shadow-lg;
+    @apply border border-transparent;
+    @apply hover:scale-105 transform;
+  }
+.btn-secondary  {
+    @apply bg-secondary text-secondary-foreground;
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+    @apply border border-border;
+    @apply hover:scale-105 transform;
+  }
+.btn-accent  {
+    @apply bg-accent text-accent-foreground;
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+    @apply shadow-md hover:shadow-lg focus:shadow-lg;
+    @apply hover:scale-105 transform;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-foreground hover:bg-muted focus:bg-muted;
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300;
+    @apply border border-transparent;
+    @apply hover:scale-105 transform;
+  }
+  
+  /* Enhanced Card Components */
+  .card {
+    @apply bg-card text-card-foreground rounded-lg border border-border shadow-md;
+    @apply hover:shadow-lg transition-all duration-300;
+  }
+  
+  .card-elevated {
+    @apply bg-card text-card-foreground rounded-lg border border-border shadow-lg;
+    @apply hover:shadow-xl transition-all duration-300;
+    @apply hover:scale-105 transform;
+  }
+  
+  /* Enhanced Gallery Components */
+  .gallery-item {
+    @apply relative overflow-hidden rounded-lg bg-muted;
+    @apply transition-all duration-300 hover:scale-105;
+    @apply cursor-pointer;
+    @apply hover:shadow-xl;
+  }
+  
+  .gallery-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent;
+    @apply opacity-0 hover:opacity-100 transition-opacity duration-300;
+  }
+  
+  /* Enhanced Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 1s ease-out forwards;
+  }
+  
+  .animate-parallax {
+    transform: translateY(var(--parallax-offset, 0));
+    transition: transform 0.1s linear;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Responsive Utilities */
+  .aspect-cinematic {
+    aspect-ratio: 21/9;
+  }
+  
+  .aspect-portrait {
+    aspect-ratio: 3/4;
+  }
+  
+  .aspect-square {
+    aspect-ratio: 1/1;
+  }
+}
+
+@layer utilities {
+  /* Custom Spacing */
+  .space-section {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .space-component {
+    @apply py-8 md:py-12;
+  }
+  
+  /* Enhanced Custom Shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-md);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .shadow-dramatic {
+    box-shadow: var(--shadow-xl);
+  }
+  
+  /* Custom Borders */
+  .border-soft {
+    border: 1px solid var(--color-border);
+  }
+  
+  /* Enhanced Custom Transitions */
+  .transition-smooth {
+    transition: all var(--transition-normal);
+  }
+  
+  .transition-slow {
+    transition: all var(--transition-slow);
+  }
+  
+  /* Enhanced Backdrop Utilities */
+  .backdrop-cinematic {
+    backdrop-filter: blur(12px) saturate(1.4);
+    background: rgba(255, 255, 255, 0.85);
+  }
+  
+  .backdrop-dark {
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,299 @@
+/* Indian Market Theme Styles for THE DREAM CAPTURE STUDIO */
+
+/* Enhanced Maroon Theme Color Palette - More Engaging */
+:root {
+  --primary-maroon: #800020;
+  --secondary-gold: #D4AF37;
+  --accent-cream: #F5F5DC;
+  --background-white: #FAFAFA;
+  --text-charcoal: #2C2C2C;
+  --border-light: #E8E8E8;
+  --maroon-light: #A0002A;
+  --cream-dark: #E6E6D4;
+  --deep-teal: #1E3A8A; /* replacing aqua */
+  --warm-amber: #F59E0B; /* new accent color */
+  --rich-burgundy: #9F1239; /* deeper maroon variant */
+}
+
+/* Premium Font Support - Using only Inter and Poppins */
+.hindi-text {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Enhanced Indian Wedding Theme Gradients */
+.indian-gradient-primary {
+  background: linear-gradient(135deg, var(--deep-teal) 0%, var(--primary-maroon) 100%);
+}
+
+.indian-gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary-gold) 0%, var(--warm-amber) 100%);
+}
+
+.indian-gradient-festive {
+  background: linear-gradient(135deg, var(--rich-burgundy) 0%, var(--primary-maroon) 50%, var(--deep-teal) 100%);
+}
+
+/* Traditional Indian Patterns - Enhanced */
+.mandala-pattern {
+  background-image: radial-gradient(circle at 50% 50%, var(--secondary-gold) 2px, transparent 2px);
+  background-size: 20px 20px;
+  animation: mandala-rotate 20s linear infinite;
+}
+
+@keyframes mandala-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.paisley-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF37' fill-opacity='0.15'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20z'/%3E%3C/g%3E%3C/svg%3E");
+  animation: paisley-float 6s ease-in-out infinite;
+}
+
+@keyframes paisley-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Enhanced Indian Festival Colors */
+.holi-colors {
+  background: linear-gradient(45deg, var(--rich-burgundy), var(--deep-teal), var(--secondary-gold), var(--primary-maroon));
+  background-size: 400% 400%;
+  animation: holi-animation 6s ease-in-out infinite;
+}
+
+@keyframes holi-animation {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Enhanced Diwali Glow Effect */
+.diwali-glow {
+  box-shadow: 
+    0 0 25px rgba(212, 175, 55, 0.4),
+    0 0 50px rgba(212, 175, 55, 0.3),
+    0 0 75px rgba(212, 175, 55, 0.2);
+  animation: diwali-flicker 3s ease-in-out infinite alternate;
+}
+
+@keyframes diwali-flicker {
+  0% { 
+    box-shadow: 
+      0 0 25px rgba(212, 175, 55, 0.4),
+      0 0 50px rgba(212, 175, 55, 0.3);
+  }
+  100% { 
+    box-shadow: 
+      0 0 35px rgba(212, 175, 55, 0.6),
+      0 0 70px rgba(212, 175, 55, 0.4);
+  }
+}
+
+/* Enhanced Indian Wedding Card Style */
+.wedding-card {
+  background: linear-gradient(135deg, #FFF8DC 0%, #F5F5DC 100%);
+  border: 2px solid var(--secondary-gold);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.wedding-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.wedding-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--secondary-gold), var(--deep-teal), var(--secondary-gold));
+  border-radius: 15px;
+  z-index: -1;
+  animation: border-glow 3s ease-in-out infinite;
+}
+
+@keyframes border-glow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Enhanced Mehendi Pattern */
+.mehendi-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23228B22' fill-opacity='0.12'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3Ccircle cx='10' cy='10' r='2'/%3E%3Ccircle cx='50' cy='50' r='2'/%3E%3Ccircle cx='10' cy='50' r='2'/%3E%3Ccircle cx='50' cy='10' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: mehendi-grow 8s ease-in-out infinite;
+}
+
+@keyframes mehendi-grow {
+  0%, 100% { transform: scale(1); opacity: 0.12; }
+  50% { transform: scale(1.1); opacity: 0.18; }
+}
+
+/* Enhanced Indian Typography */
+.indian-heading {
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-maroon);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.indian-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--deep-teal), var(--secondary-gold));
+  border-radius: 2px;
+}
+
+.indian-subheading {
+  font-family: 'Inter', sans-serif;
+  color: var(--deep-teal);
+  font-weight: 600;
+}
+
+/* Enhanced Indian Market Specific Animations */
+@keyframes indian-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.indian-fade-in {
+  animation: indian-fade-in 1s ease-out forwards;
+}
+
+/* Enhanced Indian Market Specific Global Styles */
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Hindi Text Support */
+.hindi {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+/* Enhanced Indian Color Utilities */
+.text-indian-saffron { color: #FF9933; }
+.text-indian-green { color: #138808; }
+.text-indian-red { color: #DC143C; }
+.text-deep-teal { color: var(--deep-teal); }
+.text-warm-amber { color: var(--warm-amber); }
+.text-rich-burgundy { color: var(--rich-burgundy); }
+
+.bg-indian-saffron { background-color: #FF9933; }
+.bg-indian-green { background-color: #138808; }
+.bg-indian-red { background-color: #DC143C; }
+.bg-deep-teal { background-color: var(--deep-teal); }
+.bg-warm-amber { background-color: var(--warm-amber); }
+.bg-rich-burgundy { background-color: var(--rich-burgundy); }
+
+/* Enhanced Mobile Responsive for Indian Market */
+@media (max-width: 768px) {
+  .indian-heading {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hindi-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Enhanced WhatsApp Integration Styles */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background: linear-gradient(135deg, #25d366, #128C7E);
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  z-index: 100;
+  animation: whatsapp-pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+@keyframes whatsapp-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Enhanced Indian Currency Styling */
+.rupee-symbol {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--deep-teal);
+}
+
+/* New Enhanced Interactive Elements */
+.indian-card-hover {
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.indian-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.indian-button-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.indian-button-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.indian-button-glow:hover::before {
+  left: 100%;
+}
+
+/* Enhanced Loading States */
+.indian-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--secondary-gold);
+  animation: indian-spin 1s ease-in-out infinite;
+}
+
+@keyframes indian-spin {
+  to { transform: rotate(360deg); }
+}
